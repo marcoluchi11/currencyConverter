@@ -15,8 +15,10 @@ revert.addEventListener("click", () => {
   let aux = opcion2[0].textContent;
   opcion2[0].textContent = opcion1[0].textContent;
   opcion1[0].textContent = aux;
-  borrarHijos();
-  btn.click();
+  if (importe.value != 0 || importe.value < 0) {
+    borrarHijos();
+    btn.click();
+  }
 });
 btn.addEventListener("click", () => {
   let importeFinal = parseInt(importe.value);
@@ -40,8 +42,11 @@ btn.addEventListener("click", () => {
     .then((data) => {
       let concatenado = v1 + "_" + v2;
       importeFinal *= data[concatenado];
-      let valorFinal = document.createElement("h3");
-      valorFinal.textContent = importeFinal;
+      let valorDe = obtenerOpciones(opciones);
+      let valorA = obtenerOpciones(opciones2);
+      let valorFinal = document.createElement("h5");
+      valorFinal.textContent =
+        importe.value + " " + valorDe + " = " + valorA + " " + importeFinal;
       seccion.appendChild(valorFinal);
     });
 });
