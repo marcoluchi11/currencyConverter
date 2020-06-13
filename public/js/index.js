@@ -2,9 +2,21 @@ let opciones = document.getElementById("opciones");
 let opciones2 = document.getElementById("opciones2");
 let importe = document.getElementById("importe");
 let seccion = document.getElementById("resultado");
+let revert = document.getElementById("revert");
 ponerOpciones(opciones);
 ponerOpciones(opciones2);
 let btn = document.getElementById("btn");
+
+revert.addEventListener("click", () => {
+  let opcion1 = opciones.selectedOptions;
+  let opcion2 = opciones2.selectedOptions;
+
+  let aux = opcion2[0].textContent;
+  opcion2[0].textContent = opcion1[0].textContent;
+  opcion1[0].textContent = aux;
+  borrarHijos();
+  btn.click();
+});
 btn.addEventListener("click", () => {
   let importeFinal = parseInt(importe.value);
   if (isNaN(importeFinal)) {
