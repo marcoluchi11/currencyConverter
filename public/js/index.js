@@ -5,9 +5,13 @@ let seccion = document.getElementById("resultado");
 ponerOpciones(opciones);
 ponerOpciones(opciones2);
 let btn = document.getElementById("btn");
-
-btn.addEventListener("click", (e) => {
-  let importeFinal = importe.value;
+btn.addEventListener("click", () => {
+  let importeFinal = parseInt(importe.value);
+  if (isNaN(importeFinal)) {
+    alert("ingrese valor correcto, NO INGRESE LETRAS");
+    importe.value = "";
+    return;
+  }
   let v1 = obtenerOpciones(opciones);
   let v2 = obtenerOpciones(opciones2);
 
@@ -35,15 +39,21 @@ function ponerOpciones(arg) {
     .then((res) => res.json())
     .then((data) => {
       const valores = data.results;
-      const currenciesName = Object.values(valores);
-      const sigla = Object.keys(valores);
+      let currenciesName = Object.values(valores);
+      let sigla = Object.keys(valores);
       let cont = 0;
+      let arregloFinal = new Array();
       sigla.forEach((elem) => {
-        let option = document.createElement("option");
-        option.textContent = elem + " - " + currenciesName[cont].currencyName;
-        option.id = cont;
-        arg.appendChild(option);
+        elem += " - ";
+        elem = elem.concat(currenciesName[cont].currencyName);
+        arregloFinal.push(elem);
         cont++;
+      });
+      arregloFinal.sort();
+      arregloFinal.forEach((elem) => {
+        let option = document.createElement("option");
+        option.textContent = elem;
+        arg.appendChild(option);
       });
     });
 }
@@ -55,8 +65,6 @@ function obtenerOpciones(o) {
 }
 function borrarHijos() {
   var e = document.querySelector("#resultado");
-
-  //e.firstElementChild can be used.
   var hijo = e.lastElementChild;
   while (hijo) {
     e.removeChild(hijo);
