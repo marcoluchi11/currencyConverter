@@ -1,6 +1,7 @@
 let opciones = document.getElementById("opciones");
 let opciones2 = document.getElementById("opciones2");
 let importe = document.getElementById("importe");
+importe.value = 0;
 let seccion = document.getElementById("resultado");
 let revert = document.getElementById("revert");
 ponerOpciones(opciones);
@@ -19,8 +20,8 @@ revert.addEventListener("click", () => {
 });
 btn.addEventListener("click", () => {
   let importeFinal = parseInt(importe.value);
-  if (isNaN(importeFinal)) {
-    alert("ingrese valor correcto, NO INGRESE LETRAS");
+  if (isNaN(importeFinal) || importeFinal < 0 || importeFinal === 0) {
+    alert("Ingrese valor correcto");
     importe.value = "";
     return;
   }
