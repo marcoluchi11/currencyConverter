@@ -6,4 +6,20 @@ body {
 #resultado h5 {
   margin-top: 6px;
 }
+
+footer {
+  height: 2em;
+  background-color: grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer a {
+  color: black;
+  padding-right: 6px;
+}
 /*# sourceMappingURL=style.css.map */

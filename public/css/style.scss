@@ -8,3 +8,13 @@ body {
     margin-top: 6px;
   }
 }
+footer {
+  a {
+    color: black;
+    padding-right: 6px;
+  }
+  height: 2em;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+}
