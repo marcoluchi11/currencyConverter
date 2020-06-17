@@ -8,13 +8,22 @@ body {
     margin-top: 6px;
   }
 }
-footer {
+#footer {
   a {
     color: black;
     padding-right: 6px;
+    font-size: 12px;
+    display: flex !important;
+    align-items: center !important;
   }
-  height: 2em;
-  background-color: grey;
-  display: flex;
-  justify-content: center;
+  p {
+    padding-top: 3px;
+    display: flex !important;
+    align-items: end !important;
+  }
+  font-size: 14px !important;
+  height: 3em !important;
+  background-color: grey !important;
+  display: flex !important;
+  justify-content: center !important;
 }

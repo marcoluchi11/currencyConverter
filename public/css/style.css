@@ -7,19 +7,37 @@ body {
   margin-top: 6px;
 }
 
-footer {
-  height: 2em;
-  background-color: grey;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+#footer {
+  font-size: 14px !important;
+  height: 3em !important;
+  background-color: grey !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
 }
 
-footer a {
+#footer a {
   color: black;
   padding-right: 6px;
+  font-size: 12px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+
+#footer p {
+  padding-top: 3px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: end !important;
+      -ms-flex-align: end !important;
+          align-items: end !important;
 }
 /*# sourceMappingURL=style.css.map */
