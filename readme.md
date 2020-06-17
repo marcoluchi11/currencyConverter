@@ -1,1 +1,4 @@
-Proyecto de currency converter, se deploya con firebase. EN PROCESO
+Proyecto de currency converter, se deploya con firebase. 
+
+TERMINADO
+LINK : https://marco-currencyconverter.web.app
