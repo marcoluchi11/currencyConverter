@@ -42,6 +42,7 @@ btn.addEventListener("click", () => {
     .then((data) => {
       let concatenado = v1 + "_" + v2;
       importeFinal *= data[concatenado];
+      importeFinal = Math.round(importeFinal * 100) / 100;
       let valorDe = obtenerOpciones(opciones);
       let valorA = obtenerOpciones(opciones2);
       let valorFinal = document.createElement("h5");
