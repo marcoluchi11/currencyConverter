@@ -49,6 +49,11 @@ btn.addEventListener("click", () => {
       valorFinal.textContent =
         importe.value + " " + valorDe + " = " + valorA + " " + importeFinal;
       seccion.appendChild(valorFinal);
+    })
+    .catch((err) => {
+      alert(
+        "Hay un error en el servidor para traer los tipos de moneda " + err
+      );
     });
 });
 function ponerOpciones(arg) {
@@ -74,6 +79,11 @@ function ponerOpciones(arg) {
         option.textContent = elem;
         arg.appendChild(option);
       });
+    })
+    .catch((err) => {
+      alert(
+        "Hay un error en el servidor para traer los tipos de moneda " + err
+      );
     });
 }
 function obtenerOpciones(o) {
